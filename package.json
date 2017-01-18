@@ -1,0 +1,54 @@
+{
+  "name": "electron-forge-demo",
+  "productName": "electron-forge-demo",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/electron-forge start",
+    "package": "./node_modules/.bin/electron-forge package",
+    "lint": "eslint src"
+  },
+  "electronVersion": "1.4.4",
+  "keywords": [],
+  "author": "kh1015",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {
+        "ignore": [
+          ".vscode",
+          "node_modules/sqlite3/build"
+        ]
+      },
+      "electronWinstallerConfig": {
+        "name": "electron_forge_demo"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {}
+    }
+  },
+  "dependencies": {
+    "electron-compile": "^5",
+    "sqlite3": "^3.1.8"
+  },
+  "devDependencies": {
+        "babel-cli": "^6.18.0",
+        "babel-preset-es2017": "^6.16.0",
+        "electron-compilers": "^5.1",
+        "electron-forge": "^2.7.0",
+        "electron-prebuilt-compile": "1.4.14"
+    }
+}
